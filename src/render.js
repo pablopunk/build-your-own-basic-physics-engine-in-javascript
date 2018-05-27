@@ -1,6 +1,6 @@
 const {playerPlugins, objectPlugins} = require('./plugins')
 
-const props = {}
+let props
 
 let fps = 0
 function updateFPS () {
@@ -10,7 +10,7 @@ function updateFPS () {
 window.setInterval(updateFPS, 1000)
 
 function render () {
-  props.ctx.clearRect(0, 0, props.w, props.h)
+  props.ctx.clearRect(0, 0, props.width, props.height)
 
   const {player} = props.world
   objectPlugins.map(p => p.run(player, props))
@@ -25,12 +25,9 @@ function render () {
   fps++
 }
 
-module.exports.loop = function loop (ctx, world, w, h) {
-  if (!props.ctx) {
-    props.ctx = ctx
-    props.world = world
-    props.w = w
-    props.h = h
+module.exports.loop = function loop (_props) {
+  if (!props) {
+    props = _props
   }
   window.requestAnimationFrame(loop)
   render()

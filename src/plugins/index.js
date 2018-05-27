@@ -5,5 +5,6 @@ module.exports.objectPlugins = [
 ]
 
 module.exports.playerPlugins = [
-  require('./keys')
+  require('./keys'),
+  require('./mouse')
 ]

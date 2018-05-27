@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <title>Physics</title>
   <style>
     body {
       margin: 0;
@@ -12,11 +12,16 @@
       width: 100vw;
       font-family: monospace;
       background-color: #1ee8c6;
+      user-select: none;
     }
     #title {
       width: 50%;
       display: flex;
       justify-content: space-between;
+      align-items: flex-end;
+    }
+    #title * {
+      margin: 5px;
     }
     main {
       display: flex;
@@ -34,8 +39,8 @@
 <body>
   <main>
     <div id="title">
-      <small>Use WASD to move</small>
-      <small id="fps">60 fps</small>
+      <h1>Use WASD or touch to move</h1>
+      <h3 id="fps">60 fps</h3>
     </div>
   </main>
   <script src="./src/index.js"></script>

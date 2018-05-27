@@ -2,8 +2,9 @@ const {loop} = require('./render')
 const {Object} = require('./object')
 const {playerPlugins, objectPlugins} = require('./plugins')
 
-const width = 600
-const height = 500
+const div = 1.5
+const width = document.body.clientWidth / div
+const height = document.body.clientHeight / div
 
 // Player and world
 const Player = new Object(100, 100, 20, 20, 'white')
@@ -19,10 +20,11 @@ canvas.width = width
 canvas.height = height
 document.querySelector('main').appendChild(canvas)
 const ctx = canvas.getContext('2d')
+const props = { ctx, world, width, height, canvas }
 
 // Init plugins
-playerPlugins.map(p => p.init([world.player]))
-objectPlugins.map(p => p.init(world.objects))
+playerPlugins.map(p => p.init([world.player], props))
+objectPlugins.map(p => p.init(world.objects, props))
 
 // Loop
-loop(ctx, world, width, height)
+loop(props)
