@@ -44,7 +44,7 @@ A plugin looks like this:
 
 ### `init` function
 
-It takes all world `objects` as an argument and also a `props` object containig the canvas context, the world object and the height/width: `{ ctx, world, w, h, ctx }`.
+It takes all world `objects` as an argument and also a `props` object containig the canvas context, the world object and the height/width: `{ ctx, world, w, h }`.
 
 ```js
 // src/plugins/gravity.js
