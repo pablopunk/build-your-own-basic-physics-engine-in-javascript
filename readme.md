@@ -1,6 +1,6 @@
 # Physics engine in Javascript
 
-> https://phyisics.now.sh
+> https://physics.now.sh
 
 ```sh
 $ npm run dev   # watch for files to change
