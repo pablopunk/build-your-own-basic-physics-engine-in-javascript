@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "parcel watch index.html",
     "start": "parcel index.html",
-    "build": "parcel build index.html --public-url ./"
+    "build": "parcel build index.html --public-url ./ && now dist"
   },
   "devDependencies": {
     "parcel-bundler": "1.5.1"
