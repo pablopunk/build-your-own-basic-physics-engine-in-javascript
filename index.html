@@ -12,6 +12,11 @@
       font-family: monospace;
       background-color: #1ee8c6;
     }
+    #title {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+    }
     main {
       display: flex;
       flex-direction: column;
@@ -27,7 +32,10 @@
 </head>
 <body>
   <main>
-    <h2>Use WASD to move</h2>
+    <div id="title">
+      <small>Use WASD to move</small>
+      <small id="fps">60 fps</small>
+    </div>
   </main>
   <script src="./src/index.js"></script>
 </body>
