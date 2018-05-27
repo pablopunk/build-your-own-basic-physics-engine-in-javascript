@@ -1,3 +1,12 @@
+module.exports.init = (objs) => {
+  window.addEventListener('keydown', event => onKeyDown(event.key, objs[0]))
+  window.addEventListener('keyup', event => onKeyUp(event.key, objs[0]))
+}
+
+module.exports.run = (obj, props) => {
+  actionKeys(obj)
+}
+
 const pressed = {}
 
 function onKeyUp (key) {
@@ -27,9 +36,7 @@ function actionForKey (key, obj) {
 }
 
 function actionKeys (obj) {
-  for (key in pressed) {
+  for (const key in pressed) {
     actionForKey(key, obj)
   }
 }
-
-module.exports = { onKeyDown, onKeyUp, actionKeys }

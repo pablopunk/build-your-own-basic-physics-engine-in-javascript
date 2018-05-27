@@ -1,9 +1,10 @@
 class Object {
-  constructor (x, y, w, h) {
+  constructor (x, y, w, h, c) {
     this.x = x
     this.y = y
     this.width = w
     this.height = h
+    this.color = c
 
     this.xSpeed = 0.1
     this.ySpeed = 0.1

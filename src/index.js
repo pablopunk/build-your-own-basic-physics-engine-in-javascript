@@ -1,26 +1,28 @@
 const {loop} = require('./render')
 const {Object} = require('./object')
-const {onKeyDown, onKeyUp} = require('./keys')
+const {playerPlugins, objectPlugins} = require('./plugins')
 
 const width = 600
 const height = 500
 
-const Player = new Object(100, 100, 20, 20)
+// Player and world
+const Player = new Object(100, 100, 20, 20, 'white')
 const world = {
   objects: [],
   player: Player
 }
 
+// Setup canvas
 const canvas = document.createElement('canvas')
 canvas.id = 'canvas'
 canvas.width = width
 canvas.height = height
-
 document.querySelector('main').appendChild(canvas)
-
 const ctx = canvas.getContext('2d')
 
-loop(ctx, world, width, height)
+// Init plugins
+playerPlugins.map(p => p.init([world.player]))
+objectPlugins.map(p => p.init(world.objects))
 
-window.addEventListener('keydown', event => onKeyDown(event.key, Player))
-window.addEventListener('keyup', event => onKeyUp(event.key, Player))
+// Loop
+loop(ctx, world, width, height)
