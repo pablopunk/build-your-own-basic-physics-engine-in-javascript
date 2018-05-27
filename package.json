@@ -1,0 +1,13 @@
+{
+  "name": "build-your-own-basic-physics-engine-in-javascript",
+  "author": "Pablo Varela",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel watch index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.5.1"
+  }
+}
