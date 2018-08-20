@@ -1,4 +1,4 @@
-class Object {
+class Body {
   constructor (x, y, w, h, c) {
     this.x = x
     this.y = y
@@ -24,4 +24,4 @@ class Object {
   }
 }
 
-module.exports.Object = Object
+module.exports.Body = Body

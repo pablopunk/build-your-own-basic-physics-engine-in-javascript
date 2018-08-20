@@ -1,5 +1,5 @@
 const {loop} = require('./render')
-const {Object} = require('./object')
+const {Body} = require('./body')
 const {playerPlugins, objectPlugins} = require('./plugins')
 
 const div = 1.5
@@ -7,7 +7,7 @@ const width = document.body.clientWidth / div
 const height = document.body.clientHeight / div
 
 // Player and world
-const Player = new Object(100, 100, 20, 20, 'white')
+const Player = new Body(100, 100, 20, 20, 'white')
 const world = {
   objects: [],
   player: Player
